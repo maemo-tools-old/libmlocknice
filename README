@@ -1,0 +1,25 @@
+Welcome to the wonderful world of libmlocknice!
+
+Frequently asked questions (FAQ):
+
+1. What is libmlocknice?
+
+That is small library which parses application /proc/self/maps file and make selective
+mlocking/munlocking to reduce mlocked memory usage for critical applications.
+
+2. How it can be used?
+
+See mlocknice.c test main() function for example. There are 4 meaningful combinations:
+- most expensive and slow case: mlockall(MCL_CURRENT|MCL_FUTURE)
+=> a lot of RAM used plus we need time to load process code pages
+- slow case: mlockall(MCL_CURRENT|MCL_FUTURE) and unlock code after that
+=> like first one but we release memory back, has sense for processes which has a lot of plugins
+- recommended general case: mlockall(MCL_FUTURE) and lock data segments (stack, data etc)
+=> minimal memory usage and no code pages loading required
+- economical case: lock data segments only
+=> should be used for daemons which are not grow a lot, best from time and memory usage
+
+3. What we should do?
+
+For general case I can recommend to use mlockall(MCL_FUTURE) and mln_lock_data().
+For daemons which runs for long time mln_lock_data() only.

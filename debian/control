@@ -1,0 +1,18 @@
+Source: libmlocknice
+Section: libs
+Priority: optional
+Maintainer: Leonid Moiseichuk <leonid.moiseichuk@nokia.com>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: libmlocknice-dev
+Section: devel
+Architecture: any
+Depends: libmlocknice (= ${Source-Version})
+Description: Memory Locking library for maemo applications - development files
+
+Package: libmlocknice
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Memory Locking library for maemo applications - shared library
