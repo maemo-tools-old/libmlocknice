@@ -8,7 +8,7 @@ Standards-Version: 3.9.1
 Package: libmlocknice-dev
 Section: devel
 Architecture: any
-Depends: ${misc:Depends}, libmlocknice (= ${Source-Version})
+Depends: ${misc:Depends}, libmlocknice (= ${binary:Version})
 Description: Memory Locking library for maemo applications - development files
 
 Package: libmlocknice
