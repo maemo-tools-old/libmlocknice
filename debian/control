@@ -2,8 +2,8 @@ Source: libmlocknice
 Section: libs
 Priority: optional
 Maintainer: Leonid Moiseichuk <leonid.moiseichuk@nokia.com>
-Build-Depends: debhelper (>= 4.0.0)
-Standards-Version: 3.6.0
+Build-Depends: debhelper (>= 4.0.0), autoconf, automake, libtool
+Standards-Version: 3.9.1
 
 Package: libmlocknice-dev
 Section: devel
