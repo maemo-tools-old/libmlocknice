@@ -16,3 +16,10 @@ Section: libs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Memory Locking library for maemo applications - shared library
+
+Package: libmlocknice-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: libmlocknice (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: Memory Locking library for maemo applications - debug symbols
