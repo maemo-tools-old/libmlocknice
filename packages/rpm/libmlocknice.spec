@@ -13,13 +13,12 @@ BuildRequires: autoconf, automake, libtool
  Memory Locking library for maemo applications.
  
 %prep
-%setup -q -n libmlocknice
+%setup -q -n %{name}
 
 %build
 ./autogen.sh
 
 %configure 
-make 
 
 %install
 rm -rf %{buildroot}
@@ -33,6 +32,10 @@ rm -rf %{buildroot}
 %defattr(644,root,root,-)
 %{_libdir}/libmlocknice.so.0*
 %doc README COPYING 
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
 
 
 %package -n %{name}-devel
