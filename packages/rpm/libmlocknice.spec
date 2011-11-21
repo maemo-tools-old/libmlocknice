@@ -29,7 +29,7 @@ rm %{buildroot}/usr/lib/*.la
 rm -rf %{buildroot}
 
 %files
-%defattr(644,root,root,-)
+%defattr(-,root,root,-)
 %{_libdir}/libmlocknice.so.0*
 %doc README COPYING 
 
@@ -46,9 +46,19 @@ Group: Development/Tools
  Memory Locking library development files
  
 %files -n %{name}-devel
-%defattr(644,root,root,-)
+%defattr(-,root,root,-)
 %{_libdir}/libmlocknice.a
 %{_libdir}/libmlocknice.so
 %{_includedir}/mlocknice.h
 %doc README COPYING 
 
+
+%changelog
+* Thu Feb 24 2011 Eero Tamminen <eero.tamminen@nokia.com> 0.1.2
+  *  - libmlocknice is missing debug symbols
+
+* Wed Oct 13 2010 Eero Tamminen <eero.tamminen@nokia.com> 0.1.1
+  *  - libmlocknice: add autoconf to build-deps.
+
+libmlocknice (0.1+0m5), 04 Sep 2009:
+  * First version packaged for RTcom
