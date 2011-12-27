@@ -41,6 +41,7 @@ rm -rf %{buildroot}
 %package -n %{name}-devel
 Summary: Memory Locking library development files
 Group: Development/Tools
+Requires: %{name} = %{version}
 
 %description -n %{name}-devel
  Memory Locking library development files
